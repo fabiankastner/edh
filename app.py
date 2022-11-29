@@ -38,11 +38,7 @@ app.layout = html.Div(children=[
                 
                 html.H3('', id='header-deck-commander'),
                 
-                html.Span([
-                    html.Img(src="w.png", width=15),
-                    html.Img(src="b.png", width=15),
-                    html.Img(src="r.png", width=15),
-                ], id='span-deck-colors'),
+                html.Span(id='span-deck-colors'),
                 
                 html.P(id='p-deck-description'),
                 
@@ -217,7 +213,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
         img_url = card_data['image_uris']['art_crop']
 
     # set mana symbols according to color identity
-    span_deck_colors_children = [html.Img(src="{}.png".format(c), width=15) for c in colors]
+    span_deck_colors_children = [html.Img(src="static/{}.png".format(c), width=15) for c in colors]
 
     return img_url, commander_name, span_deck_colors_children, not is_budget, p_deck_description_children, ul_tags_children, not dotd
     
