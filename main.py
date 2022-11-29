@@ -28,6 +28,7 @@ app.layout = html.Div(children=[
             html.Div([
                 
                 html.Span('Budget', className='pro', id='span-deck-budget'),
+                html.Span('Deck of the Day', className='pro-2', id='span-deck-of-the-day'),
                 
                 html.Img(src='', width=200, id='img-deck-commander', className='round'),
                 
@@ -39,7 +40,7 @@ app.layout = html.Div(children=[
                     html.Img(src="assets/r.png", width=15),
                 ], id='span-deck-colors'),
                 
-                html.P('TODO: add description'),
+                html.P(id='p-deck-description'),
                 
                 html.Div([
                     html.Button('Get Deck', id='btn-get-deck', n_clicks=0, className='primary ghost'),
@@ -84,18 +85,21 @@ app.layout = html.Div(children=[
                         )
                     ]),
 
+                    dbc.Row([
+                        dbc.Col(html.Label('Powerlevel'), width=4),
+                        dbc.Col(dcc.RangeSlider(1, 10, 1, value=[1, 10], id='range-slider-power-level'), width=8)
+                    ], className='filter'),
+
+                    dbc.Row([
+                        dbc.Col(html.Label('Interactivity'), width=4),
+                        dbc.Col(dcc.RangeSlider(1, 10, 1, value=[1, 10], id='range-slider-interactivity'), width=8)
+                    ]),
+
                 ], id='collapse-deck-filters', is_open=False),
 
                 html.Div([
-                    html.H6('TODO: Add tags'),
-                    html.Ul([
-                        html.Li('Tag 1'),
-                        html.Li('Tag 2'),
-                        html.Li('Tag 3'),
-                        html.Li('Tag 4'),
-                        html.Li('Tag 5'),
-                        html.Li('Tag 6')
-                    ])
+                    html.H6('Tags'),
+                    html.Ul(id='ul-tags')
                 ], className='skills'),
 
             ], className='card-container')
@@ -105,6 +109,7 @@ app.layout = html.Div(children=[
 
 
 
+# get random deck from todays date
 def get_dotd_idx():
     d = datetime.date.today()
     d0 = datetime.date(1970, 1, 1)
@@ -114,11 +119,15 @@ def get_dotd_idx():
 
 
 
+# handle deck selection callback
 @app.callback(
     [Output("img-deck-commander", "src"),
      Output('header-deck-commander', 'children'),
      Output('span-deck-colors', 'children'),
-     Output('span-deck-budget', 'hidden')],
+     Output('span-deck-budget', 'hidden'),
+     Output('p-deck-description', 'children'),
+     Output('ul-tags', 'children'),
+     Output('span-deck-of-the-day', 'hidden')],
     [State('toggle-is-combo', 'value'),
      State('range-slider-colors', 'value'),
      State('toggle-is-budget', 'value'),
@@ -126,50 +135,77 @@ def get_dotd_idx():
      State('img-color-u', 'src'),
      State('img-color-b', 'src'),
      State('img-color-r', 'src'),
-     State('img-color-g', 'src')],
+     State('img-color-g', 'src'),
+     State('range-slider-power-level', 'value'),
+     State('range-slider-interactivity', 'value')],
     [Input("btn-get-deck", "n_clicks"),
      Input('btn-get-dotd', 'n_clicks')]
 )
-def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, _, __):
+def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interactivity, _, __):
 
     # on intial load and per default get deck of the day
     idx = get_dotd_idx()
 
+    # if get-deck was clicked, select a random deck according to filters
     input_id = dash.callback_context.triggered[0]["prop_id"].split(".")[0]
     if input_id=='btn-get-deck':
-        # print('has combo: {}'.format(is_combo))
-        # print('n colors: {}'.format(n_colors))
-        # print('is budget: {}'.format(is_budget))
-        # print('colors: {}'.format())
 
+        # filter colors from the image sources
         colors = [x[7] for x in [w, u, b, r, g] if not '_' in x]
 
+        # initialize lambda filter functions
         l1 = lambda x: x['is_budget']>=int(is_budget)
         l2 = lambda x: x['has_combos']<=int(is_combo)
         l3 = lambda x: n_colors[0] <= len(x['colors']) <= n_colors[1]
         l4 = lambda x: set(colors).issubset(set(x['colors']))
+        l5 = lambda x: power_level[0] <= x['power_level'] <= power_level[1]
+        l6 = lambda x: interactivity[0] <= x['interactivity'] <= interactivity[1]
         
-        filter = GLOBAL_DECKS_DF.apply(l1, axis=1) & GLOBAL_DECKS_DF.apply(l2, axis=1) & GLOBAL_DECKS_DF.apply(l3, axis=1) & GLOBAL_DECKS_DF.apply(l4, axis=1)
+        # filter the subset of decks that fulfill the filter criteria
+        filter = GLOBAL_DECKS_DF.apply(l1, axis=1) & GLOBAL_DECKS_DF.apply(l2, axis=1) &\
+            GLOBAL_DECKS_DF.apply(l3, axis=1) & GLOBAL_DECKS_DF.apply(l4, axis=1) &\
+            GLOBAL_DECKS_DF.apply(l5, axis=1) & GLOBAL_DECKS_DF.apply(l6, axis=1)
 
+        # filter the dataframe
         decks_df_filtered = GLOBAL_DECKS_DF[filter]
         global GLOBAL_LAST_IDX
-        
+
+        # pick an different 'random' deck each time
         if GLOBAL_LAST_IDX:
             decks_df_filtered = decks_df_filtered[decks_df_filtered.index != GLOBAL_LAST_IDX]
-        print(decks_df_filtered.shape[0])
 
+        # select deck of the day if selection is empty
         if not decks_df_filtered.empty: idx = decks_df_filtered.sample(1).index.item()
         GLOBAL_LAST_IDX = idx
 
+    dotd = True if idx==get_dotd_idx() else False
+
+    # get the deck information
     name, commander_name, colors, archidekt_link, power_level, interactivity, has_combos, is_budget = GLOBAL_DECKS_DF.iloc[idx]
+    
+    # TODO: add tags
+    ul_tags_children=[
+        html.Li('Spicy Brew'),
+        html.Li('Budget'),
+        html.Li('Full Old Border'),
+        html.Li('Only German Cards'),
+        html.Li('Free Spells'),
+        html.Li('Battlecruiser')
+    ]
+
+    p_deck_description_children = 'Some description about the deck, its unique features, maybe highlight some special cards. Talk about the win-con or some history on the deck.'
+
+    # handle multiple commanders
+    # TODO: create split image
     commander_names = commander_name.split('/') if '/' in commander_name else ''
     if commander_names:
         commander_name = commander_names[0]
 
+    # get card info from scryfall
     uri = 'https://api.scryfall.com/cards/search?q={}'.format(commander_name)
     card = loads(get(uri).text)
 
-    # handle two faced cards
+    # handle two faced cards - pick front by default
     card_data = card['data'][0]
     if 'card_faces' in card_data:
         img_url = card_data['card_faces'][0]['image_uris']['art_crop']
@@ -179,13 +215,11 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, _, __):
     # set mana symbols according to color identity
     span_deck_colors_children = [html.Img(src="assets/{}.png".format(c), width=15) for c in colors]
 
-    return img_url, commander_name, span_deck_colors_children, not is_budget
+    return img_url, commander_name, span_deck_colors_children, not is_budget, p_deck_description_children, ul_tags_children, not dotd
     
 
 
-
-# -------------------------------------------------------------------------------------------------------- #
-
+# collapse filters
 @app.callback(
     [Output("collapse-deck-filters", "is_open"),
     Output("icon-filters-close", 'className')],
@@ -198,8 +232,9 @@ def collapse_filters(n_clicks):
     else:
         return False, 'fa fa-level-down'
 
-# -------------------------------------------------------------------------------------------------------- #
 
+
+# toggle selected mana symbol colors
 @app.callback(Output("img-color-w", 'src'), Input("img-color-w", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_w(n_clicks):
     return 'assets/w_.png' if n_clicks%2==0 else 'assets/w.png'
@@ -220,7 +255,6 @@ def toggle_img_color_r(n_clicks):
 def toggle_img_color_g(n_clicks):
     return 'assets/g_.png' if n_clicks%2==0 else 'assets/g.png'
 
-# -------------------------------------------------------------------------------------------------------- #
 
 
 if __name__=='__main__':
