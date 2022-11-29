@@ -9,6 +9,8 @@ import dash_daq as daq
 import dash_bootstrap_components as dbc
 from requests import get
 from json import loads
+import gunicorn
+from whitenoise import WhiteNoise
 
 
 GLOBAL_DECKS_DF = pd.read_csv(os.path.join('static/decks.csv'), sep=';')
@@ -17,6 +19,9 @@ GLOBAL_LAST_IDX = None
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'])
 
+server=app.server
+
+server.wsgi_app = WhiteNoise(server.wsgi_app, root='static/') 
 
 app.layout = html.Div(children=[
     dbc.Row(
@@ -255,4 +260,4 @@ def toggle_img_color_g(n_clicks):
 
 
 if __name__=='__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False, host='0.0.0.0', port=8050)
