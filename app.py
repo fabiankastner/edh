@@ -76,11 +76,11 @@ app.layout = html.Div(children=[
                         dbc.Col(html.Label('Colors'), width=4),
                         dbc.Col(
                             html.Span([
-                                html.Img(src="w_.png", width=25, id='img-color-w'),
-                                html.Img(src="u_.png", width=25, id='img-color-u'),
-                                html.Img(src="b_.png", width=25, id='img-color-b'),
-                                html.Img(src="r_.png", width=25, id='img-color-r'),
-                                html.Img(src="g_.png", width=25, id='img-color-g'),
+                                html.Img(src='static/w_.png', width=25, id='img-color-w'),
+                                html.Img(src='static/u_.png', width=25, id='img-color-u'),
+                                html.Img(src='static/b_.png', width=25, id='img-color-b'),
+                                html.Img(src='static/r_.png', width=25, id='img-color-r'),
+                                html.Img(src='static/g_.png', width=25, id='img-color-g'),
                             ]),
                         )
                     ]),
@@ -121,7 +121,7 @@ def get_dotd_idx():
 
 # handle deck selection callback
 @app.callback(
-    [Output("img-deck-commander", "src"),
+    [Output('img-deck-commander', 'src'),
      Output('header-deck-commander', 'children'),
      Output('span-deck-colors', 'children'),
      Output('span-deck-budget', 'hidden'),
@@ -138,7 +138,7 @@ def get_dotd_idx():
      State('img-color-g', 'src'),
      State('range-slider-power-level', 'value'),
      State('range-slider-interactivity', 'value')],
-    [Input("btn-get-deck", "n_clicks"),
+    [Input('btn-get-deck', 'n_clicks'),
      Input('btn-get-dotd', 'n_clicks')]
 )
 def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interactivity, _, __):
@@ -147,7 +147,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
     idx = get_dotd_idx()
 
     # if get-deck was clicked, select a random deck according to filters
-    input_id = dash.callback_context.triggered[0]["prop_id"].split(".")[0]
+    input_id = dash.callback_context.triggered[0]['prop_id'].split('.')[0]
     if input_id=='btn-get-deck':
 
         # filter colors from the image sources
@@ -213,7 +213,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
         img_url = card_data['image_uris']['art_crop']
 
     # set mana symbols according to color identity
-    span_deck_colors_children = [html.Img(src="static/{}.png".format(c), width=15) for c in colors]
+    span_deck_colors_children = [html.Img(src='static/{}.png'.format(c), width=15) for c in colors]
 
     return img_url, commander_name, span_deck_colors_children, not is_budget, p_deck_description_children, ul_tags_children, not dotd
     
@@ -221,9 +221,9 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
 
 # collapse filters
 @app.callback(
-    [Output("collapse-deck-filters", "is_open"),
-    Output("icon-filters-close", 'className')],
-    Input("icon-filters-close", "n_clicks"),
+    [Output('collapse-deck-filters', 'is_open'),
+    Output('icon-filters-close', 'className')],
+    Input('icon-filters-close', 'n_clicks'),
     prevent_initial_call=True
 )
 def collapse_filters(n_clicks):
@@ -235,25 +235,25 @@ def collapse_filters(n_clicks):
 
 
 # toggle selected mana symbol colors
-@app.callback(Output("img-color-w", 'src'), Input("img-color-w", "n_clicks"), prevent_initial_call=True)
+@app.callback(Output('img-color-w', 'src'), Input('img-color-w', 'n_clicks'), prevent_initial_call=True)
 def toggle_img_color_w(n_clicks):
-    return 'w_.png' if n_clicks%2==0 else 'w.png'
+    return 'static/w_.png' if n_clicks%2==0 else 'static/w.png'
 
-@app.callback(Output("img-color-u", 'src'), Input("img-color-u", "n_clicks"), prevent_initial_call=True)
+@app.callback(Output('img-color-u', 'src'), Input('img-color-u', 'n_clicks'), prevent_initial_call=True)
 def toggle_img_color_u(n_clicks):
-    return 'u_.png' if n_clicks%2==0 else 'u.png'
+    return 'static/u_.png' if n_clicks%2==0 else 'static/u.png'
 
-@app.callback(Output("img-color-b", 'src'), Input("img-color-b", "n_clicks"), prevent_initial_call=True)
+@app.callback(Output('img-color-b', 'src'), Input('img-color-b', 'n_clicks'), prevent_initial_call=True)
 def toggle_img_color_b(n_clicks):
-    return 'b_.png' if n_clicks%2==0 else 'b.png'
+    return 'static/b_.png' if n_clicks%2==0 else 'static/b.png'
 
-@app.callback(Output("img-color-r", 'src'), Input("img-color-r", "n_clicks"), prevent_initial_call=True)
+@app.callback(Output('img-color-r', 'src'), Input('img-color-r', 'n_clicks'), prevent_initial_call=True)
 def toggle_img_color_r(n_clicks):
-    return 'r_.png' if n_clicks%2==0 else 'r.png'
+    return 'static/r_.png' if n_clicks%2==0 else 'static/r.png'
 
-@app.callback(Output("img-color-g", 'src'), Input("img-color-g", "n_clicks"), prevent_initial_call=True)
+@app.callback(Output('img-color-g', 'src'), Input('img-color-g', 'n_clicks'), prevent_initial_call=True)
 def toggle_img_color_g(n_clicks):
-    return 'g_.png' if n_clicks%2==0 else 'g.png'
+    return 'static/g_.png' if n_clicks%2==0 else 'static/g.png'
 
 
 
