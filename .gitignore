@@ -130,7 +130,5 @@ dmypy.json
 
 # ------- #
 
-assets
-static
 .DS_Store
 .vscode
