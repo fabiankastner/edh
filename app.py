@@ -20,7 +20,7 @@ server=app.server
 server.wsgi_app = WhiteNoise(server.wsgi_app, root='/static')
 
 
-GLOBAL_DECKS_DF = pd.read_csv(os.path.join('decks.csv'), sep=';')
+GLOBAL_DECKS_DF = pd.read_csv(os.path.join('static/decks.csv'), sep=';')
 GLOBAL_LAST_IDX = None
 
 
