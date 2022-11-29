@@ -11,15 +11,12 @@ from requests import get
 from json import loads
 
 
-
-GLOBAL_DECKS_DF = pd.read_csv(os.path.join('assets/decks.csv'), sep=';')
+GLOBAL_DECKS_DF = pd.read_csv(os.path.join('static/decks.csv'), sep=';')
 GLOBAL_LAST_IDX = None
 
 
-
-
-
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'])
+
 
 app.layout = html.Div(children=[
     dbc.Row(
@@ -35,9 +32,9 @@ app.layout = html.Div(children=[
                 html.H3('', id='header-deck-commander'),
                 
                 html.Span([
-                    html.Img(src="assets/w.png", width=15),
-                    html.Img(src="assets/b.png", width=15),
-                    html.Img(src="assets/r.png", width=15),
+                    html.Img(src="static/w.png", width=15),
+                    html.Img(src="static/b.png", width=15),
+                    html.Img(src="static/r.png", width=15),
                 ], id='span-deck-colors'),
                 
                 html.P(id='p-deck-description'),
@@ -76,11 +73,11 @@ app.layout = html.Div(children=[
                         dbc.Col(html.Label('Colors'), width=4),
                         dbc.Col(
                             html.Span([
-                                html.Img(src="assets/w_.png", width=25, id='img-color-w'),
-                                html.Img(src="assets/u_.png", width=25, id='img-color-u'),
-                                html.Img(src="assets/b_.png", width=25, id='img-color-b'),
-                                html.Img(src="assets/r_.png", width=25, id='img-color-r'),
-                                html.Img(src="assets/g_.png", width=25, id='img-color-g'),
+                                html.Img(src="static/w_.png", width=25, id='img-color-w'),
+                                html.Img(src="static/u_.png", width=25, id='img-color-u'),
+                                html.Img(src="static/b_.png", width=25, id='img-color-b'),
+                                html.Img(src="static/r_.png", width=25, id='img-color-r'),
+                                html.Img(src="static/g_.png", width=25, id='img-color-g'),
                             ]),
                         )
                     ]),
@@ -213,7 +210,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
         img_url = card_data['image_uris']['art_crop']
 
     # set mana symbols according to color identity
-    span_deck_colors_children = [html.Img(src="assets/{}.png".format(c), width=15) for c in colors]
+    span_deck_colors_children = [html.Img(src="static/{}.png".format(c), width=15) for c in colors]
 
     return img_url, commander_name, span_deck_colors_children, not is_budget, p_deck_description_children, ul_tags_children, not dotd
     
@@ -237,23 +234,23 @@ def collapse_filters(n_clicks):
 # toggle selected mana symbol colors
 @app.callback(Output("img-color-w", 'src'), Input("img-color-w", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_w(n_clicks):
-    return 'assets/w_.png' if n_clicks%2==0 else 'assets/w.png'
+    return 'static/w_.png' if n_clicks%2==0 else 'static/w.png'
 
 @app.callback(Output("img-color-u", 'src'), Input("img-color-u", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_u(n_clicks):
-    return 'assets/u_.png' if n_clicks%2==0 else 'assets/u.png'
+    return 'static/u_.png' if n_clicks%2==0 else 'static/u.png'
 
 @app.callback(Output("img-color-b", 'src'), Input("img-color-b", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_b(n_clicks):
-    return 'assets/b_.png' if n_clicks%2==0 else 'assets/b.png'
+    return 'static/b_.png' if n_clicks%2==0 else 'static/b.png'
 
 @app.callback(Output("img-color-r", 'src'), Input("img-color-r", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_r(n_clicks):
-    return 'assets/r_.png' if n_clicks%2==0 else 'assets/r.png'
+    return 'static/r_.png' if n_clicks%2==0 else 'static/r.png'
 
 @app.callback(Output("img-color-g", 'src'), Input("img-color-g", "n_clicks"), prevent_initial_call=True)
 def toggle_img_color_g(n_clicks):
-    return 'assets/g_.png' if n_clicks%2==0 else 'assets/g.png'
+    return 'static/g_.png' if n_clicks%2==0 else 'static/g.png'
 
 
 
