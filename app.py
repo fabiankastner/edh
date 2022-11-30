@@ -181,19 +181,11 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
     dotd = True if idx==get_dotd_idx() else False
 
     # get the deck information
-    name, commander_name, colors, archidekt_link, power_level, interactivity, has_combos, is_budget = GLOBAL_DECKS_DF.iloc[idx]
-    
-    # TODO: add tags
-    ul_tags_children=[
-        html.Li('Spicy Brew'),
-        html.Li('Budget'),
-        html.Li('Full Old Border'),
-        html.Li('Only German Cards'),
-        html.Li('Free Spells'),
-        html.Li('Battlecruiser')
-    ]
+    name, commander_name, colors, archidekt_link, power_level, interactivity, has_combos, is_budget, description, tags = GLOBAL_DECKS_DF.iloc[idx]
+    tags = tags.split(',')
 
-    p_deck_description_children = 'Some description about the deck, its unique features, maybe highlight some special cards. Talk about the win-con or some history on the deck.'
+    # TODO: add tags
+    ul_tags_children=[html.Li(t) for t in tags]
 
     # handle multiple commanders
     # TODO: create split image
@@ -215,7 +207,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
     # set mana symbols according to color identity
     span_deck_colors_children = [html.Img(src='static/{}.png'.format(c), width=15) for c in colors]
 
-    return img_url, commander_name, span_deck_colors_children, not is_budget, p_deck_description_children, ul_tags_children, not dotd
+    return img_url, commander_name, span_deck_colors_children, not is_budget, description, ul_tags_children, not dotd
     
 
 
