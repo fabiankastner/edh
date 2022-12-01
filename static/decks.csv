@@ -1,30 +1,30 @@
-name;commander_name;colors;archidekt_link;power_level;interactivity;has_combos;is_budget;description;tags
-Arcades - Defenders;Arcades, the Strategist;wug;216953;5;6;1;1;Walls/defender tribal. Chunky blockers, Asymmetric board wipes. Possible infinite combo.;Creatures,Casual,Defenders,WUG,Counterspells,Board Wipes,Combat Damage,Flyers
-Yidris - Storm;Yidris, Maelstrom Wielder;ubrg;1685336;9;1;1;1;4C storm using cantrips, flashback, tutors and mana doubling. Uses graveyard recursion and cascade to generate mana and cards.;UBRG,Cascade,Combo,High Power,Tutors,Recursion,Cantrips
-Licia - Lifegain;Licia, Sanguine Tribune;wbr;;5;3;0;1;Lifegain/lifeloss combined with voltron. Utilizing mardu removal and lots of incidential lifegain.;Budget,Mardu,Lifegain,Voltron,Board wipes,WIP, Casual
-Queza - Draw/Wheels;Queza, Augur of Agonies;wub;;6;5;1;1;Lots of card draw, drain and lifegain. Draw your deck and drain your opponents doing so.;Budget,Esper,Counterspells,Combo,Wheels,Drain,WIP
-Denry - Counters;Denry Klin, Editor in Chief;wu;;5;4;0;1;Copy all counters (first strike, vigilance, +1/+1 etc.) onto other creatures on etb. Using azorius value creatures.;Budget,Azorius,Janky,Counters,+1/+1,Combat damage,Casual
-Klothys - Group Slug;Klothys, God of Destiny;rg;;5;4;0;1;Punish abilities, spells and land drops. Double damage, and recur lands from your graveyard.;Budget,Gruul,Pingers,Double Damage,Lands,Clock
-Subira - Aggro;Subira, Tulzidi Caravanner;r;;5;2;0;1;Deploy lots of creatures/creature tokens and use subiras ability to refill your hand.;Budget,Mono,Aggro,Combat,Tokens,Clock
-Lurrus - Permanents;Lurrus of the Dream-Den;wb;;6;7;0;1;Deck consists of exclusively permanents with cmc<=2 for lurrus' ability. Strong removal and voltron package.;Budget,Orzhov,Lifegain,Voltron,Low CMC,Permanetns,Removal
-Garth - Value;Garth One-Eye/Jegantha, the Wellspring;wubrg;;6;7;0;1;Untap effects combined with land enchantments to produce lots of mana/untap valueable creatures (garth).;Budget,WUBRG,Untap,Big Mana,Alternative Wincon,Companion,Blink
-Kumena - Merfolk;Kumena, Tyrant of Orazca;ug;;7;6;1;0;Merfolk tribal utilizing untap/tap effects combined with simic card draw and ramp.;Simic,Counterspells,Tribal,Combat,Tutors
-Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;2010128;5;2;0;1;;
-Wyleth - Equipments;Wyleth, Soul of Steel;wr;1566921;5;2;0;1;;
-Sidisi - Reanimator/Tokens;Sidisi, Brood Tyrant;ubg;1446701;5;4;1;1;;
-Galazeth - Artifacts;Galazeth Prismari;ur;2460651;5;6;0;1;;
-Selvala - Elves;Selvala, Explorer Returned;wg;1566829;5;3;0;1;;
-Tasigur - Control;Tasigur, the Golden Fang;ubg;1932790;6;9;1;1;;
-Soraya - Old Border Birds;Soraya the Falconer;w;2243169;1;1;0;1;;
-Purphoros - Sneak Attack;Purphoros, Bronze-Blooded;r;2100072;4;3;1;1;;
-Ayara - Aristocrats;Ayara, First of Locthwain;b;2323714;4;2;0;1;;
-Titania - Lands;Titania, Protector of Argoth;g;2220110;5;2;0;1;;
-Meren - Reanimator;Meren of Clan Nel Toth;bg;342731;8;5;0;0;;
-Rielle - Spellslinger;Rielle, the Everwise;ur;937028;9;7;1;0;;
-Yuriko - Topdeck;Yuriko, the Tiger's Shadow;ub;278484;9;8;0;0;;
-Tibalt - Control;Valki, God of Lies;br;1570491;7;5;0;0;;
-Hallar - Kicker;Hallar, the Firefletcher;rg;374037;2;3;0;1;;
-Araumi - Reanimator;Araumi of the Dead Tide;ub;1648481;2;3;0;1;;
-Keruga - Permanents;Keruga, the Macrosage;ug;2516850;5;4;0;1;;
-Isshin - On Attack;Isshin, Two Heavens as One;wbr;2520493;5;2;1;1;;
-Losheel - Artifacts;Losheel, Clockwork Scholar;w;2516911;4;5;0;1;;
+name;commander_name;colors;power_level;interactivity;has_combos;is_budget;description;tags
+Arcades - Defenders;Arcades, the Strategist;wug;5;6;1;1;Walls/defender tribal. Chunky blockers, Asymmetric board wipes. Possible infinite combo.;Creatures,Casual,Defenders,WUG,Counterspells,Board Wipes,Combat Damage,Flyers
+Yidris - Storm;Yidris, Maelstrom Wielder;ubrg;9;1;1;1;4C storm using cantrips, flashback, tutors and mana doubling. Uses graveyard recursion and cascade to generate mana and cards.;UBRG,Cascade,Combo,High Power,Tutors,Recursion,Cantrips
+Licia - Lifegain;Licia, Sanguine Tribune;wbr;5;3;0;1;Lifegain/lifeloss combined with voltron. Utilizing mardu removal and lots of incidential lifegain.;Budget,Mardu,Lifegain,Voltron,Board wipes,WIP, Casual
+Queza - Draw/Wheels;Queza, Augur of Agonies;wub;6;5;1;1;Lots of card draw, drain and lifegain. Draw your deck and drain your opponents doing so.;Budget,Esper,Counterspells,Combo,Wheels,Drain,WIP
+Denry - Counters;Denry Klin, Editor in Chief;wu;5;4;0;1;Copy all counters (first strike, vigilance, +1/+1 etc.) onto other creatures on etb. Using azorius value creatures.;Budget,Azorius,Janky,Counters,+1/+1,Combat damage,Casual
+Klothys - Group Slug;Klothys, God of Destiny;rg;5;4;0;1;Punish abilities, spells and land drops. Double damage, and recur lands from your graveyard.;Budget,Gruul,Pingers,Double Damage,Lands,Clock
+Subira - Aggro;Subira, Tulzidi Caravanner;r;5;2;0;1;Deploy lots of creatures/creature tokens and use subiras ability to refill your hand.;Budget,Mono,Aggro,Combat,Tokens,Clock
+Lurrus - Permanents;Lurrus of the Dream-Den;wb;6;7;0;1;Deck consists of exclusively permanents with cmc<=2 for lurrus' ability. Strong removal and voltron package.;Budget,Orzhov,Lifegain,Voltron,Low CMC,Permanetns,Removal
+Garth - Value;Garth One-Eye/Jegantha, the Wellspring;wubrg;6;7;0;1;Untap effects combined with land enchantments to produce lots of mana/untap valueable creatures (garth).;Budget,WUBRG,Untap,Big Mana,Alternative Wincon,Companion,Blink
+Kumena - Merfolk;Kumena, Tyrant of Orazca;ug;7;6;1;0;Merfolk tribal utilizing untap/tap effects combined with simic card draw and ramp.;Simic,Counterspells,Tribal,Combat,Tutors
+Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;5;2;0;1;;
+Wyleth - Equipments;Wyleth, Soul of Steel;wr;5;2;0;1;;
+Sidisi - Reanimator/Tokens;Sidisi, Brood Tyrant;ubg;5;4;1;1;;
+Galazeth - Artifacts;Galazeth Prismari;ur;5;6;0;1;;
+Selvala - Elves;Selvala, Explorer Returned;wg;5;3;0;1;;
+Tasigur - Control;Tasigur, the Golden Fang;ubg;6;9;1;1;;
+Soraya - Old Border Birds;Soraya the Falconer;w;1;1;0;1;;
+Purphoros - Sneak Attack;Purphoros, Bronze-Blooded;r;4;3;1;1;;
+Ayara - Aristocrats;Ayara, First of Locthwain;b;4;2;0;1;;
+Titania - Lands;Titania, Protector of Argoth;g;5;2;0;1;;
+Meren - Reanimator;Meren of Clan Nel Toth;bg;8;5;0;0;;
+Rielle - Spellslinger;Rielle, the Everwise;ur;9;7;1;0;;
+Yuriko - Topdeck;Yuriko, the Tiger's Shadow;ub;9;8;0;0;;
+Tibalt - Control;Valki, God of Lies;br;7;5;0;0;;
+Hallar - Kicker;Hallar, the Firefletcher;rg;2;3;0;1;;
+Araumi - Reanimator;Araumi of the Dead Tide;ub;2;3;0;1;;
+Keruga - Permanents;Keruga, the Macrosage;ug;5;4;0;1;;
+Isshin - On Attack;Isshin, Two Heavens as One;wbr;5;2;1;1;;
+Losheel - Artifacts;Losheel, Clockwork Scholar;w;4;5;0;1;;
