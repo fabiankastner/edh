@@ -9,8 +9,8 @@ Subira - Aggro;Subira, Tulzidi Caravanner;r;5;2;0;1;Deploy lots of creatures/cre
 Lurrus - Permanents;Lurrus of the Dream-Den;wb;6;7;0;1;Deck consists of exclusively permanents with cmc<=2 for lurrus' ability. Strong removal and voltron package.;Budget,Orzhov,Lifegain,Voltron,Low CMC,Permanetns,Removal
 Garth - Value;Garth One-Eye/Jegantha, the Wellspring;wubrg;6;7;0;1;Untap effects combined with land enchantments to produce lots of mana/untap valueable creatures (garth).;Budget,WUBRG,Untap,Big Mana,Alternative Wincon,Companion,Blink
 Kumena - Merfolk;Kumena, Tyrant of Orazca;ug;7;6;1;0;Merfolk tribal utilizing untap/tap effects combined with simic card draw and ramp.;Simic,Counterspells,Tribal,Combat,Tutors
-Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;5;2;0;1;;
-Wyleth - Equipments;Wyleth, Soul of Steel;wr;5;2;0;1;;
+Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;6;4;0;1;Aristocrats/tokens strategy using sacrifice to draw cards deal damage.;
+Wyleth - Equipments;Wyleth, Soul of Steel;wr;5;2;0;1;Voltron using equipments with low equip costs to exploit Wyleth's ability to refill your hand.;
 Sidisi - Reanimator/Tokens;Sidisi, Brood Tyrant;ubg;5;4;1;1;;
 Galazeth - Artifacts;Galazeth Prismari;ur;5;6;0;1;;
 Selvala - Elves;Selvala, Explorer Returned;wg;5;3;0;1;;
