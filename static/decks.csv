@@ -25,8 +25,8 @@ Meren - Reanimator;Meren of Clan Nel Toth;bg;8;5;0;0;Reanimator list with all th
 Rielle - Spellslinger;Rielle, the Everwise;ur;9;7;1;0;High power spellslinger deck using card draw/looting effect to exploit Rielle and draw even more cards.;
 Yuriko - Topdeck;Yuriko, the Tiger's Shadow;ub;9;8;0;0;High power dimir control list that relies on yuriko in combination with top-deck maniulation to flip high cmc spells to win.;
 Tibalt - Control;Valki, God of Lies;br;7;5;0;0;Rakdos control trying to win by generating too much value to deal with.;
-Hallar - Kicker;Hallar, the Firefletcher;rg;2;3;0;1;;
-Araumi - Reanimator;Araumi of the Dead Tide;ub;2;3;0;1;;
-Keruga - Permanents;Keruga, the Macrosage;ug;5;4;0;1;;
+Hallar - Kicker;Hallar, the Firefletcher;rg;2;3;0;1;Gruul kicker spells, putting +1/+1 counters on hallar for the win.;
+Araumi - Reanimator;Araumi of the Dead Tide;ub;2;3;0;1;Focused on self mill to fuel Araumi's ability to make multiple copies of high impact creatures.;
+Keruga - Permanents;Keruga, the Macrosage;ug;5;4;0;1;Deck consist of mostly permanents with cmc >=3 to get huge draws when Keruga enters.;
 Isshin - On Attack;Isshin, Two Heavens as One;wbr;5;2;1;1;;
 Losheel - Artifacts;Losheel, Clockwork Scholar;w;4;5;0;1;;
