@@ -9,19 +9,19 @@ Subira - Aggro;Subira, Tulzidi Caravanner;r;5;2;0;1;Deploy lots of creatures/cre
 Lurrus - Permanents;Lurrus of the Dream-Den;wb;6;7;0;1;Deck consists of exclusively permanents with cmc<=2 for lurrus' ability. Strong removal and voltron package.;Budget,Orzhov,Lifegain,Voltron,Low CMC,Permanetns,Removal
 Garth - Value;Garth One-Eye/Jegantha, the Wellspring;wubrg;6;7;0;1;Untap effects combined with land enchantments to produce lots of mana/untap valueable creatures (garth).;Budget,WUBRG,Untap,Big Mana,Alternative Wincon,Companion,Blink
 Kumena - Merfolk;Kumena, Tyrant of Orazca;ug;7;6;1;0;Merfolk tribal utilizing untap/tap effects combined with simic card draw and ramp.;Simic,Counterspells,Tribal,Combat,Tutors
-Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;6;4;0;1;Aristocrats/tokens strategy using sacrifice to draw cards deal damage.;
-Wyleth - Equipments;Wyleth, Soul of Steel;wr;5;2;0;1;Voltron using equipments with low equip costs to exploit Wyleth's ability to refill your hand.;
-Cecili - Control;Cecily, Haunted Mage;ubr;6;8;0;1;Classic grixis spell control with a boatload of carddraw. Cecily can be used to cheat out big spells;
-Umbris - Voltron;Umbris, Fear Manifest;ub;4;5;0;1;Utilizes horros, mill and exile to make umbris huge. Interactivity focused on protecting umbris.;
-Sidisi - Reanimator/Tokens;Sidisi, Brood Tyrant;ubg;5;4;1;1;Mill creatures, create tokens. Reanimate milled stuff or use tokens as fodder for card draw etc.;
-Galazeth - Artifacts;Galazeth Prismari;ur;5;6;0;1;The strategy relies on a large number of token artifacts (treasures, clues) to fuel big mana spells;
-Selvala - Elves;Selvala, Explorer Returned;wg;5;3;0;1;Classic elfball tribal including white for protection.;
-Tasigur - Control;Tasigur, the Golden Fang;ubg;6;9;1;1;Graveyard control deck which largely relies on Tasigur's ability to recur cards.;
-Soraya - Old Border Birds;Soraya the Falconer;w;1;1;0;1;Strictly old border bird tribal using cards made before 2000.;
+Tana Tevesh - Aristocrats;Tana, the Bloodsower/Tevesh Szat, Doom of Fools;brg;6;4;0;1;Aristocrats/tokens strategy using sacrifice to draw cards deal damage.;Jund,Partner,Aristocrats,Sacrifice,Tokens,Drain,Draw
+Wyleth - Equipments;Wyleth, Soul of Steel;wr;5;2;0;1;Voltron using equipments with low equip costs to exploit Wyleth's ability to refill your hand.;Boros,Voltron,Combat,Draw,Auras,Equipments,Protection
+Cecili - Control;Cecily, Haunted Mage;ubr;6;8;0;1;Classic grixis spell control with a boatload of carddraw. Cecily can be used to cheat out big spells;Grixis Control,Interactive,Board Wipes,Counterspells,Big Mana,Recursion,Graveyard
+Umbris - Voltron;Umbris, Fear Manifest;ub;4;5;0;1;Utilizes horros, mill and exile to make umbris huge. Interactivity focused on protecting umbris.;Dimir,Voltron,Mill,Exile,Protection,Horrors,Counterspells,Alternative Win Con
+Sidisi - Reanimator/Tokens;Sidisi, Brood Tyrant;ubg;5;4;1;1;Mill creatures, create tokens. Reanimate milled stuff or use tokens as fodder for card draw etc.;Sultai,Tokens,Reanimator,Self Mill,Graveyard,Aristocrats
+Galazeth - Artifacts;Galazeth Prismari;ur;5;6;0;1;The strategy relies on a large number of token artifacts (treasures, clues) to fuel big mana spells;Izzet,Spellslinger,Counterspells,Arifacts,Clues,Treasures,Big Mana,X-Spells
+Selvala - Elves;Selvala, Explorer Returned;wg;5;3;0;1;Classic elfball tribal including white for protection.;Selesnya,Tribal,Elves,Mana Dorks,Combat
+Tasigur - Control;Tasigur, the Golden Fang;ubg;6;9;1;1;Graveyard control deck which largely relies on Tasigur's ability to recur cards.;Sultai,Control,Recursion,Counterspells,Board Wipes,Tutors,Combo,Mana Dorks,Interactive
+Soraya - Old Border Birds;Soraya the Falconer;w;1;1;0;1;Strictly old border bird tribal using cards made before 2000.;Mono,Tribal,Birds,Old Borders,Proxies,Janky,Combat,Anthems,Flyers
 Purphoros - Sneak Attack;Purphoros, Bronze-Blooded;r;4;3;1;1;Uses purphoros to bypass cmc and flash in big creatures/artifacts which high-impact etb/ltb abilities.;Mono,Budget,Sneak Attack,Big Mana,ETB,Dragons
 Ayara - Aristocrats;Ayara, First of Locthwain;b;4;2;0;1;Aristocrats relying largely on token production to flood the board with expandible creatures.;Mono,Budget,Aristocrats,Drain,Tokens,Sacrifice
 Titania - Lands;Titania, Protector of Argoth;g;5;2;0;1;Lands strategy which also sacrifices lands for Titania's value only to recur them later on.;Lands,Mono,Budget,Graveyard,Land Animation,Combat,Tokens
-Meren - Reanimator;Meren of Clan Nel Toth;bg;8;5;1;0;Reanimator list with all the good golgari sacrifice/etb creatures to generate fast, recurrible value.;Golgari,Reanimator,Expensive,Value,Graveyard,Self Mill,ETB
+Meren - Reanimator;Meren of Clan Nel Toth;bg;8;5;1;0;Reanimator list with all the good golgari sacrifice/etb creatures to generate fast, recurrible value.;Golgari,Reanimator,Expensive,Value,Graveyard,Self Mill,ETB,Mana Dorks
 Rielle - Spellslinger;Rielle, the Everwise;ur;9;7;1;0;High power spellslinger deck using card draw/looting effect to exploit Rielle and draw even more cards.;High Power,Expensive,Spellslinger,Draw,Loot,Proxies,Old Borders,Combat Damage,Alternative Win Con
 Yuriko - Topdeck;Yuriko, the Tiger's Shadow;ub;9;8;0;0;High power dimir control list that relies on yuriko in combination with top-deck maniulation to flip high cmc spells to win.;High Power,Extra Turns,Expensive,Free Spells,Counterspells,Tutors,Top Deck,Drain,Ninjutsu
 Tibalt - Control;Valki, God of Lies;br;7;5;0;0;Rakdos control trying to win by generating too much value to deal with.;Rakdos,Value,Planeswalker,Board Wipes,Control,Impulse Draw,Exile,Expensive
