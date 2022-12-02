@@ -181,7 +181,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
     dotd = True if idx==get_dotd_idx() else False
 
     # get the deck information
-    name, commander_name, colors, archidekt_link, power_level, interactivity, has_combos, is_budget, description, tags = GLOBAL_DECKS_DF.iloc[idx]
+    name, commander_name, colors, power_level, interactivity, has_combos, is_budget, description, tags = GLOBAL_DECKS_DF.iloc[idx]
     tags = tags.split(',')
 
     # TODO: add tags
