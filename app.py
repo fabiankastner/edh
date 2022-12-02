@@ -14,6 +14,7 @@ from whitenoise import WhiteNoise
 
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'])
+app.title='EDH'
 
 server=app.server
 
@@ -49,7 +50,7 @@ app.layout = html.Div(children=[
 
                 html.Div(
                     dbc.Row([
-                        dbc.Col(html.I(className='fa fa-level-down', style={'padding-top': '5px'}, id='icon-filters-close'), width=4),
+                        dbc.Col(html.Button(html.I(className='fa fa-level-down', id='icon-filters-close', style={'padding-top': '0px'}), id='btn-filters-close', className='primary', style={'padding': '5px', 'float': 'right'}), width=4),
                         dbc.Col(html.H6('Filters'), width=8),
                     ]), style={'margin-top': '10px'}
                 ),
@@ -57,23 +58,23 @@ app.layout = html.Div(children=[
                 dbc.Collapse([
 
                     dbc.Row([
-                        dbc.Col(html.Label('Combo'), width=4),
-                        dbc.Col(daq.ToggleSwitch(id='toggle-is-combo', value=True), width=8)
-                    ]),
+                        dbc.Col(html.Label('Combo', style={'float': 'right'}), width=5),
+                        dbc.Col(daq.ToggleSwitch(id='toggle-is-combo', value=True, color='#03BFCB'), width=7)
+                    ], className='filter-row-first'),
 
 
                     dbc.Row([
-                        dbc.Col(html.Label('Colors'), width=4),
-                        dbc.Col(dcc.RangeSlider(1, 5, 1, value=[1, 5], id='range-slider-colors'), width=8)
-                    ]),
+                        dbc.Col(html.Label('Colors', style={'float': 'right'}), width=5),
+                        dbc.Col(dcc.RangeSlider(1, 5, 1, marks=None, value=[1, 5], id='range-slider-colors'), width=7)
+                    ], className='filter-row'),
 
                     dbc.Row([
-                        dbc.Col(html.Label('Budget'), width=4),
-                        dbc.Col(daq.ToggleSwitch(id='toggle-is-budget', value=False), width=8)
-                    ]),
+                        dbc.Col(html.Label('Budget', style={'float': 'right'}), width=5),
+                        dbc.Col(daq.ToggleSwitch(id='toggle-is-budget', value=False, color='#03BFCB'), width=7)
+                    ], className='filter-row'),
 
                     dbc.Row([
-                        dbc.Col(html.Label('Colors'), width=4),
+                        dbc.Col(html.Label('Colors', style={'float': 'right'}), width=5),
                         dbc.Col(
                             html.Span([
                                 html.Img(src='static/w_.png', width=25, id='img-color-w'),
@@ -81,19 +82,19 @@ app.layout = html.Div(children=[
                                 html.Img(src='static/b_.png', width=25, id='img-color-b'),
                                 html.Img(src='static/r_.png', width=25, id='img-color-r'),
                                 html.Img(src='static/g_.png', width=25, id='img-color-g'),
-                            ]),
-                        )
-                    ]),
+                            ]), width=7)
+                    ], className='filter-row'),
 
                     dbc.Row([
-                        dbc.Col(html.Label('Powerlevel'), width=4),
-                        dbc.Col(dcc.RangeSlider(1, 10, 1, value=[1, 10], id='range-slider-power-level'), width=8)
-                    ], className='filter'),
+                        dbc.Col(html.Label('Powerlevel', style={'float': 'right'}), width=5),
+                        dbc.Col(dcc.RangeSlider(1, 10, 1, marks=None, value=[1, 10], id='range-slider-power-level'), width=7)
+                    ], className='filter-row'),
 
                     dbc.Row([
-                        dbc.Col(html.Label('Interactivity'), width=4),
-                        dbc.Col(dcc.RangeSlider(1, 10, 1, value=[1, 10], id='range-slider-interactivity'), width=8)
-                    ]),
+                        dbc.Col(html.Label('Interactivity', style={'float': 'right'}), width=5),
+                        dbc.Col(dcc.RangeSlider(1, 10, 1, marks=None, value=[1, 10], id='range-slider-interactivity'), width=7)
+                    ], className='filter-row'),
+
 
                 ], id='collapse-deck-filters', is_open=False),
 
@@ -215,7 +216,7 @@ def get_deck(is_combo, n_colors, is_budget, w, u, b, r, g, power_level, interact
 @app.callback(
     [Output('collapse-deck-filters', 'is_open'),
     Output('icon-filters-close', 'className')],
-    Input('icon-filters-close', 'n_clicks'),
+    Input('btn-filters-close', 'n_clicks'),
     prevent_initial_call=True
 )
 def collapse_filters(n_clicks):
@@ -250,4 +251,4 @@ def toggle_img_color_g(n_clicks):
 
 
 if __name__=='__main__':
-    app.run_server(debug=False, host='0.0.0.0', port=8050)
+    app.run_server(debug=True, host='0.0.0.0', port=8050)

@@ -109,7 +109,7 @@ button.primary.ghost:hover {
 	background-color: #1F1A36;
 	text-align: left;
 	padding: 15px;
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 .skills.alternative {
@@ -139,6 +139,16 @@ button.primary.ghost:hover {
     color: #2D2747;
 }
 
+.filter-row-first {
+	height:20px;
+	margin-top:20px;
+}
+
+.filter-row {
+	height:20px;
+	margin-top:7px;
+}
+
 footer {
     background-color: #222;
     color: #fff;
@@ -163,3 +173,4 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
